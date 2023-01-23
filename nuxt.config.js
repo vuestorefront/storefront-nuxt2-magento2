@@ -24,12 +24,12 @@ const {
 
 // Client side middleware url
 const middlewareUrl = process.env.NODE_ENV === 'production'
-  ? process.env.VSF_MIDDLEWARE_URL
+  ? process.env.API_BASE_URL
   : 'http://localhost:8181';
 
 // Server side middleware url
 const ssrMiddlewareUrl = process.env.NODE_ENV === 'production'
-  ? process.env.VSF_SSR_MIDDLEWARE_URL
+  ? process.env.API_SSR_BASE_URL
   : 'http://localhost:8181';
 
 export default async () => {
@@ -244,28 +244,28 @@ export default async () => {
       },
     },
     image: {
-      provider: process.env.VSF_IMAGE_PROVIDER,
+      provider: process.env.NUXT_IMAGE_PROVIDER,
     },
     env: {
       VSF_MAGENTO_GRAPHQL_URL: process.env.VSF_MAGENTO_GRAPHQL_URL,
     },
   };
 
-  if (process.env.VSF_IMAGE_PROVIDER === 'cloudinary') {
+  if (process.env.NUXT_IMAGE_PROVIDER === 'cloudinary') {
     baseConfig.image.cloudinary = {
-      baseURL: process.env.VSF_IMAGE_PROVIDER_BASE_URL,
+      baseURL: process.env.NUXT_IMAGE_PROVIDER_BASE_URL,
     };
 
-    if (process.env.VSF_IMAGE_PROVIDER_DOMAIN) {
+    if (process.env.NUXT_IMAGE_PROVIDER_DOMAIN) {
       const preconnectConfig = [
         {
           rel: 'preconnect',
-          href: process.env.VSF_IMAGE_PROVIDER_DOMAIN,
+          href: process.env.NUXT_IMAGE_PROVIDER_DOMAIN,
           crossorigin: true,
         },
         {
           rel: 'dns-prefetch',
-          href: process.env.VSF_IMAGE_PROVIDER_DOMAIN,
+          href: process.env.NUXT_IMAGE_PROVIDER_DOMAIN,
         },
       ];
 
