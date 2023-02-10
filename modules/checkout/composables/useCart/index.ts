@@ -272,7 +272,7 @@ PRODUCT
       return !!product?.configurable_product_options_selection?.variant
         ?.uid;
     }
-    const inStock = product.stock_status === ProductStockStatus.InStock ? true : false;
+    const inStock = product?.stock_status === ProductStockStatus.InStock ? true : false;
     const stockLeft = product?.only_x_left_in_stock === null
       ? true
       : qty <= product?.only_x_left_in_stock;
