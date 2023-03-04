@@ -3,7 +3,7 @@
     <SfHeading
       :key="`filter-title-${filter.attribute_code}`"
       :level="4"
-      :title="filter.label"
+      :title="$t(filter.label)"
       class="filters__title sf-heading--left"
     />
     <component

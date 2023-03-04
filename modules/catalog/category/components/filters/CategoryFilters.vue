@@ -82,7 +82,7 @@
         >
           <SfAccordionItem
             :key="`filter-title-${filter.attribute_code}`"
-            :header="filter.label"
+            :header="$t(filter.label)"
             class="filters__accordion-item"
           >
             <component
