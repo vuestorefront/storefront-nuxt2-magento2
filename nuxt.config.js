@@ -22,23 +22,13 @@ const {
   },
 } = middleware;
 
-// Client side middleware url
-const middlewareUrl = process.env.NODE_ENV === 'production'
-  ? process.env.API_BASE_URL
-  : 'http://localhost:8181';
-
-// Server side middleware url
-const ssrMiddlewareUrl = process.env.NODE_ENV === 'production'
-  ? process.env.API_SSR_BASE_URL
-  : 'http://localhost:8181';
-
 export default async () => {
   const baseConfig = {
     ssr: true,
     dev: process.env.VSF_NUXT_APP_ENV !== 'production',
     publicRuntimeConfig: {
-      middlewareUrl,
-      ssrMiddlewareUrl
+      middlewareUrl: process.env.API_BASE_URL || 'http://localhost:8181',
+      ssrMiddlewareUrl: process.env.API_SSR_BASE_URL || 'http://localhost:8181'
     },
     server: {
       port: process.env.VSF_NUXT_APP_PORT,
