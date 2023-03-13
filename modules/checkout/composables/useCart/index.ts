@@ -9,7 +9,7 @@ import { removeCouponCommand } from '~/modules/checkout/composables/useCart/comm
 import { removeItemCommand } from '~/modules/checkout/composables/useCart/commands/removeItemCommand';
 import { updateItemQtyCommand } from '~/modules/checkout/composables/useCart/commands/updateItemQtyCommand';
 import { Logger } from '~/helpers/logger';
-import { Cart, CartItemInterface, ProductInterface } from '~/modules/GraphQL/types';
+import { Cart, CartItemInterface, ProductInterface, ProductStockStatus } from '~/modules/GraphQL/types';
 import { useCartStore } from '~/modules/checkout/stores/cart';
 import { useWishlist } from '~/modules/wishlist/composables/useWishlist';
 import { Product } from '~/modules/catalog/product/types';
@@ -272,7 +272,7 @@ PRODUCT
       return !!product?.configurable_product_options_selection?.variant
         ?.uid;
     }
-    const inStock = product?.stock_status || '';
+    const inStock = product?.stock_status === ProductStockStatus.InStock ? true : false;
     const stockLeft = product?.only_x_left_in_stock === null
       ? true
       : qty <= product?.only_x_left_in_stock;
