@@ -16,6 +16,7 @@ const findCurrencyBasedOnMagentoStoreCode = (storeCode: string, locales: Array<s
  * @param currency {string}
  * @returns {string}
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const prepareNewCookieString = (app: NuxtAppOptions, newStoreCode: string, currency: string) => {
   const apiState = app.$vsf.$magento.config.state;
   const customerTokenCookie = apiState.getCustomerToken();

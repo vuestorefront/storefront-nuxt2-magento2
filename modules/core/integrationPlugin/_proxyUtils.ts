@@ -37,12 +37,12 @@ export const getCookies = (context: NuxtContext) => context?.req?.headers?.cooki
 
 export const getIntegrationConfig = (context: NuxtContext, configuration: any) => {
   const cookie = getCookies(context);
-  return  merge({
+  return merge({
     axios: {
       headers: {
         ...(cookie ? { cookie } : {}),
       },
-      withCredentials: true
+      withCredentials: true,
     },
   }, configuration);
 };

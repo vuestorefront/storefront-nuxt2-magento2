@@ -100,6 +100,7 @@ jobs:
         run: yarn test
 
       - name: SonarCloud Scan
+        if: github.event.repository.name == 'storefront-nuxt2-magento2'
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -116,6 +117,7 @@ jobs:
     name: Performance tests
     needs: prepare_dependencies
     runs-on: ubuntu-latest
+    if: github.event.repository.name == 'storefront-nuxt2-magento2'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
