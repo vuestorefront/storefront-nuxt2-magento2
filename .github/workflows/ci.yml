@@ -108,7 +108,7 @@ jobs:
         with:
           args: >
             -Dsonar.organization=vuestorefront
-            -Dsonar.projectKey=vuestorefront_storefront-commercetools
+            -Dsonar.projectKey=vuestorefront_storefront-nuxt2-magento2
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
             -Dsonar.coverage.exclusions=/__tests__/**,*.config.js
             -Dsonar.cpd.exclusions=/__tests__/**
