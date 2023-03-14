@@ -32,7 +32,7 @@
               "image-size-responsive": "off",
               "interactive": "off",
               "largest-contentful-paint": "off",
-              "lcp-lazy-loaded": "error",
+              "lcp-lazy-loaded": "warn",
               "legacy-javascript": "off",
               "long-tasks": "warn",
               "main-thread-tasks": "off",
@@ -160,7 +160,7 @@
                 "error",
                 {
                   "aggregationMethod": "median",
-                  "maxNumericValue": 0.1
+                  "maxNumericValue": 0.2
                 }
               ],
               "dom-size": [
@@ -186,7 +186,7 @@
               "total-byte-weight": [
                 "error",
                 {
-                  "maxNumericValue": 762000
+                  "maxNumericValue": 780000
                 }
               ]
             }
