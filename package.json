@@ -28,7 +28,7 @@
   "dependencies": {
     "@beyonk/google-fonts-webpack-plugin": "^1.7",
     "@nuxt/image": "^0.7.1",
-    "@nuxtjs/composition-api": "^0.31.0",
+    "@nuxtjs/composition-api": "^0.29.3",
     "@nuxtjs/device": "^2.1.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/recaptcha": "^1.1.1",
@@ -110,7 +110,6 @@
     "mochawesome-report-generator": "^6.2.0",
     "npm-check-updates": "^15.0.4",
     "postinstall-postinstall": "2.1.0",
-    "shx": "^0.3.4",
     "ts-jest": "^28.0.5",
     "ts-loader": "^8.1.0",
     "ts-node": "^10.8.2",
