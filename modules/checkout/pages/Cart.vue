@@ -261,8 +261,8 @@ import {
 } from '@nuxtjs/composition-api';
 import SvgImage from '~/components/General/SvgImage.vue';
 import { Breadcrumb } from '~/modules/catalog/types';
-import CouponCode from '../../../components/CouponCode.vue';
 import { useCartView } from '~/modules/checkout/composables/useCartView';
+import CouponCode from '../../../components/CouponCode.vue';
 
 export default defineComponent({
   name: 'CartPage',

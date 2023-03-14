@@ -12,6 +12,7 @@ const plugin : Plugin = ({ $pinia, app }) => {
     customerStore.setIsLoggedIn(true);
   }
 
+  // eslint-disable-next-line consistent-return
   app.$vsf.$magento.client.interceptors.response.use((res) => {
     if (!hasGraphqlAuthorizationError(res.data as ApolloQueryResult<unknown>)) {
       return res;

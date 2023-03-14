@@ -1,6 +1,6 @@
 import type { CategoryTree } from '~/modules/GraphQL/types';
-import type { FilterParams, Params } from './Params';
 import type { FacetInterface } from '~/modules/catalog/category/types';
+import type { FilterParams, Params } from './Params';
 
 /**
  * Data and methods returned from the {@link useUiHelpers} composable.

@@ -1,8 +1,8 @@
 import { readonly, ref, useContext } from '@nuxtjs/composition-api';
 import { Logger } from '~/helpers/logger';
 import type { CategorySearchQueryVariables, CategoryTree } from '~/modules/GraphQL/types';
-import type { UseCategorySearchErrors, UseCategorySearchInterface } from './useCategorySearch';
 import { ComposableFunctionArgs } from '~/composables';
+import type { UseCategorySearchErrors, UseCategorySearchInterface } from './useCategorySearch';
 
 /**
  * Allows searching for categories. It is
