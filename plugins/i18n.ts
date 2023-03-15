@@ -1,4 +1,4 @@
-import { Context } from '@nuxt/types';
+import type { Context } from '@nuxt/types';
 import { LocaleObject } from 'nuxt-i18n';
 
 const findLocaleBasedOnMagentoStoreCode = (storeCode: string, locales: Array<string | LocaleObject>) => locales.find((locale) => ((typeof locale === 'object' ? locale.code : locale) === storeCode));
