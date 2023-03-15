@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import { readonly, ref, useContext } from '@nuxtjs/composition-api';
 import { Logger } from '~/helpers/logger';
-import { ComposableFunctionArgs } from '~/composables';
+import type { ComposableFunctionArgs } from '~/composables';
 import { addReviewCommand } from './commands/addReviewCommand';
 import { loadCustomerReviewsCommand } from './commands/loadCustomerReviewsCommand';
 import { loadReviewMetadataCommand } from './commands/loadReviewMetadataCommand';
