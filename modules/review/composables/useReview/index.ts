@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return */
 import { readonly, ref, useContext } from '@nuxtjs/composition-api';
 import { Logger } from '~/helpers/logger';
+import type { ComposableFunctionArgs } from '~/composables';
 import { addReviewCommand } from './commands/addReviewCommand';
 import { loadCustomerReviewsCommand } from './commands/loadCustomerReviewsCommand';
 import { loadReviewMetadataCommand } from './commands/loadReviewMetadataCommand';
@@ -11,7 +12,6 @@ import type {
   UseReviewSearchParams,
   UseReviewAddReviewParams,
 } from './useReview';
-import { ComposableFunctionArgs } from '~/composables';
 
 /**
  * Allows loading and adding product reviews.
