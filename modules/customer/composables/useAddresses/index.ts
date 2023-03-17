@@ -3,8 +3,8 @@ import type { Ref } from '@nuxtjs/composition-api';
 import { Logger } from '~/helpers/logger';
 import { transformUserCreateAddressInput, transformUserUpdateAddressInput } from '~/modules/customer/helpers/userAddressManipulator';
 import type { ComposableFunctionArgs } from '~/composables/types';
-import type { UseAddressesInterface, UseAddressesParamsInput, UseAddressesErrors } from './useAddresses';
 import { CustomQuery, CustomHeaders } from '~/types/core';
+import type { UseAddressesInterface, UseAddressesParamsInput, UseAddressesErrors } from './useAddresses';
 
 /**
  * @public
