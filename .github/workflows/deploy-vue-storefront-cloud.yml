@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Determine environment-specific variables
         shell: bash
         id: resolve-env-filename
@@ -35,13 +35,13 @@ jobs:
     needs: configure-deployment
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Setup deployment environments variables
         shell: bash
         run: |
           cat .github/workflows/public_env_info/${{ needs.configure-deployment.outputs.env-info-file }} >> $GITHUB_ENV
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: "16.x"
       - name: Build and publish docker image
@@ -65,13 +65,13 @@ jobs:
     needs: configure-deployment
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Setup deployment environments variables
         shell: bash
         run: |
           cat .github/workflows/public_env_info/${{ needs.configure-deployment.outputs.env-info-file }} >> $GITHUB_ENV
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: "16.x"
       - name: Build and publish docker image
