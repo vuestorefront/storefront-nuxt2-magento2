@@ -2,7 +2,7 @@ name: Deploy to Vue Storefront Cloud
 on:
   push:
     branches:
-      - main
+      - chore/storefront-1161-upgrade-gh-actions
 jobs:
   configure-deployment:
     runs-on: ubuntu-latest
@@ -19,9 +19,8 @@ jobs:
         run: |
           REF=${{ github.ref }}
 
-          if [ $REF = 'refs/heads/main' ]; then
+          if [ $REF = 'refs/heads/chore/storefront-1161-upgrade-gh-action' ]; then
             ENVINFO_FILE=production
-
           else
             echo 'unrecognized branch name'
             exit 1
@@ -45,7 +44,7 @@ jobs:
         with:
           node-version: "16.x"
       - name: Build and publish docker image
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: ${{ secrets.PROJECT_NAME }}-storefrontcloud-io/vue-storefront:${{ github.sha }}
           registry: ${{ secrets.DOCKER_REGISTRY_URL || 'registry.vuestorefront.cloud' }}
@@ -75,7 +74,7 @@ jobs:
         with:
           node-version: "16.x"
       - name: Build and publish docker image
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: ${{ secrets.PROJECT_NAME }}-storefrontcloud-io/vue-storefront-middleware:${{ github.sha }}
           registry: ${{ secrets.DOCKER_REGISTRY_URL || 'registry.vuestorefront.cloud' }}
@@ -95,14 +94,14 @@ jobs:
       deployments: write
     needs: [configure-deployment, build-storefront, build-middleware]
     steps:
-      - uses: chrnorm/deployment-action@releases/v1
+      - uses: chrnorm/deployment-action@v2
         name: Create GitHub deployment
         id: deployment
         with:
           token: "${{ github.token }}"
-          target_url: https://${{ secrets.PROJECT_NAME }}.${{ secrets.CLOUD_REGION }}.gcp.storefrontcloud.io
+          environment-url: https://${{ secrets.PROJECT_NAME }}.${{ secrets.CLOUD_REGION }}.gcp.storefrontcloud.io
           environment: production
-          initial_status: in_progress
+          initial-status: in_progress
 
       - name: Deploy on ${{ secrets.PROJECT_NAME }}.${{ secrets.CLOUD_REGION }}.gcp.storefrontcloud.io
         run: |
@@ -132,20 +131,20 @@ jobs:
 
       - name: Update deployment status (success)
         if: success()
-        uses: chrnorm/deployment-status@releases/v1
+        uses: chrnorm/deployment-status@v2
         with:
           token: "${{ github.token }}"
-          target_url: https://${{ secrets.PROJECT_NAME }}.${{ secrets.CLOUD_REGION }}.gcp.storefrontcloud.io
+          environment-url: https://${{ secrets.PROJECT_NAME }}.${{ secrets.CLOUD_REGION }}.gcp.storefrontcloud.io
           state: "success"
           description: Congratulations! The deploy is done.
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
       - name: Update deployment status (failure)
         if: failure()
-        uses: chrnorm/deployment-status@releases/v1
+        uses: chrnorm/deployment-status@v2
         with:
           token: "${{ github.token }}"
-          target_url: https://${{ secrets.PROJECT_NAME }}.${{ secrets.CLOUD_REGION }}.gcp.storefrontcloud.io
-          description: Unfortunately, the instance hasn't been updated.
+          environment-url: https://${{ secrets.PROJECT_NAME }}.${{ secrets.CLOUD_REGION }}.gcp.storefrontcloud.io
           state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          description: Unfortunately, the instance hasn't been updated.
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
