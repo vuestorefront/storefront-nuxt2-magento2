@@ -55,15 +55,19 @@ jobs:
     name: Lint PR Title (conventional-commit)
     needs: prepare_dependencies
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Dependencies
-        run: rm package.json && npm install @commitlint/config-conventional
+      - uses: ./.github/actions/install-dependencies
+        with:
+          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
+          NPM_USER: ${{ secrets.NPM_USER }}
+          NPM_PASS: ${{ secrets.NPM_PASS }}
 
-      - name: Run linter
-        uses: JulienKode/pull-request-name-linter-action@v0.5.0
+      - name: Validate PR title
+        run: echo "${{ github.event.pull_request.title }}" | npx commitlint
 
   lint-code:
     name: Lint code
@@ -110,7 +114,7 @@ jobs:
             -Dsonar.organization=vuestorefront
             -Dsonar.projectKey=vuestorefront_storefront-nuxt2-magento2
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
-            -Dsonar.coverage.exclusions=/__tests__/**,*.config.js,**/*.*
+            -Dsonar.coverage.exclusions=/__tests__/**,*.config.js
             -Dsonar.cpd.exclusions=/__tests__/**
 
   performance-tests:
