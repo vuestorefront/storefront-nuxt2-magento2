@@ -19,7 +19,7 @@ jobs:
         run: |
           REF=${{ github.ref }}
 
-          if [ $REF = 'refs/heads/chore/storefront-1161-upgrade-gh-action' ]; then
+          if [ $REF = 'refs/heads/chore/storefront-1161-upgrade-gh-actions' ]; then
             ENVINFO_FILE=production
           else
             echo 'unrecognized branch name'
