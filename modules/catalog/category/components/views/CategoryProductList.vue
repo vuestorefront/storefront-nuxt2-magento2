@@ -72,8 +72,8 @@ import SkeletonLoader from '~/components/SkeletonLoader/index.vue';
 import { useImage } from '~/composables';
 import type { Product } from '~/modules/catalog/product/types';
 import { useUser } from '~/modules/customer/composables/useUser';
-import { useProductsWithCommonProductCardProps } from './useProductsWithCommonCardProps';
 import CategoryProductPrice from '~/modules/catalog/category/components/views/CategoryProductPrice.vue';
+import { useProductsWithCommonProductCardProps } from './useProductsWithCommonCardProps';
 
 export default defineComponent({
   components: {

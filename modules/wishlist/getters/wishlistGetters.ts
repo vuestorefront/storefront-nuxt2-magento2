@@ -1,9 +1,9 @@
 import type { Totals, Pagination } from '~/composables/types';
 import type { Price } from '~/modules/catalog/types';
-import type { WishlistGetters as BaseWishlistGetters } from './types';
 import type {
   Wishlist, ProductInterface, WishlistItemInterface,
 } from '~/modules/GraphQL/types';
+import type { WishlistGetters as BaseWishlistGetters } from './types';
 
 export const getItems = (wishlist: Wishlist): WishlistItemInterface[] => wishlist.items_v2.items;
 
