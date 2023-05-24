@@ -4,13 +4,13 @@ import { setPaymentMethodOnCartCommand } from '~/modules/checkout/composables/us
 import { getAvailablePaymentMethodsCommand } from '~/modules/checkout/composables/usePaymentProvider/commands/getAvailablePaymentMethodsCommand';
 import useCart from '~/modules/checkout/composables/useCart';
 
+import { CustomQuery, CustomHeaders } from '~/types/core';
 import type {
   UsePaymentProviderErrors,
   UsePaymentProviderInterface,
   UsePaymentProviderSaveParams,
   PaymentMethodParams,
 } from './usePaymentProvider';
-import { CustomQuery, CustomHeaders } from '~/types/core';
 
 /**
  * Allows loading the available payment
