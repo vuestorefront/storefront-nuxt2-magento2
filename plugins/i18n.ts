@@ -1,4 +1,4 @@
-import { Context, NuxtAppOptions } from '@nuxt/types';
+import type { Context } from '@nuxt/types';
 import { LocaleObject } from 'nuxt-i18n';
 
 const findLocaleBasedOnMagentoStoreCode = (storeCode: string, locales: Array<string | LocaleObject>) => locales.find((locale) => ((typeof locale === 'object' ? locale.code : locale) === storeCode));
@@ -6,35 +6,6 @@ const findLocaleBasedOnMagentoStoreCode = (storeCode: string, locales: Array<str
 const findCurrencyBasedOnMagentoStoreCode = (storeCode: string, locales: Array<string | LocaleObject>): string => {
   const match = locales.find((locale) => typeof locale === 'object' && locale.code === storeCode) as LocaleObject | undefined;
   return match?.defaultCurrency;
-};
-
-/**
- * Prepare new cookie string based on app state.
- *
- * @param app {NuxtAppOptions}
- * @param newStoreCode {string}
- * @param currency {string}
- * @returns {string}
- */
-const prepareNewCookieString = (app: NuxtAppOptions, newStoreCode: string, currency: string) => {
-  const apiState = app.$vsf.$magento.config.state;
-  const customerTokenCookie = apiState.getCustomerToken();
-  const cartIdCookie = apiState.getCartId();
-
-  let cookie = `vsf-store=${newStoreCode}; `;
-  cookie += `vsf-locale=${newStoreCode}; `;
-  cookie += `vsf-currency=${currency}; `;
-  cookie += `vsf-country=${apiState.getCountry()}; `;
-
-  if (customerTokenCookie) {
-    cookie += `vsf-customer=${customerTokenCookie}; `;
-  }
-
-  if (cartIdCookie) {
-    cookie += `vsf-cart=${cartIdCookie} `;
-  }
-
-  return cookie;
 };
 
 export default ({ app, route }: Context) => app.$vsf.$magento.client.interceptors.request.use(async (request) => {

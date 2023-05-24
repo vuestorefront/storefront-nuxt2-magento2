@@ -5,6 +5,7 @@ import { useUser } from '~/modules/customer/composables/useUser';
 import { transformUserCreateAddressInput, transformUserUpdateAddressInput } from '~/modules/customer/helpers/userAddressManipulator';
 import { CustomerAddress } from '~/modules/GraphQL/types';
 import mask from '~/composables/utils/mask';
+import type { CustomQuery, CustomHeaders } from '~/types/core';
 import { createCustomerAddressCommand } from './commands/createCustomerAddressCommand';
 import { deleteCustomerAddressCommand } from './commands/deleteCustomerAddressCommand';
 import { updateCustomerAddressCommand } from './commands/updateCustomerAddressCommand';
@@ -15,7 +16,6 @@ import type {
   UseUserAddressUpdateAddressParams,
   UseUserAddressSetDefaultAddressParams,
 } from './useUserAddress';
-import { CustomQuery, CustomHeaders } from '~/types/core';
 
 /**
  * Allows loading and manipulating addresses of the current user.
