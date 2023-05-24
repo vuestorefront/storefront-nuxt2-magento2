@@ -29,6 +29,8 @@ const plugin : Plugin = ({ $pinia, app }) => {
     });
 
     app.router.push(app.localePath('/'));
+
+    return res;
   });
 };
 
