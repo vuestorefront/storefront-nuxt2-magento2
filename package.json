@@ -1,7 +1,7 @@
 {
   "name": "@vue-storefront/magento-theme",
   "description": "Magento2 Integration for Vue Storefront 2",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
   "license": "MIT",
   "homepage": "https://github.com/vuestorefront/magento2",
@@ -37,7 +37,7 @@
     "@storefront-ui/vue": "0.13.6",
     "@vue-storefront/cache": "2.7.5",
     "@vue-storefront/http-cache": "2.7.5",
-    "@vue-storefront/magento-api": "1.1.0",
+    "@vue-storefront/magento-api": "2.1.1",
     "@vue-storefront/middleware": "2.7.5",
     "@vue-storefront/nuxt": "2.7.5",
     "@vue-storefront/redis-cache": "^1.0.1",
@@ -119,7 +119,8 @@
     "typescript": "^4.7.4",
     "vue-eslint-parser": "^8.2.0",
     "vue-jest": "^3.0.7",
-    "webpack": "4.46.0"
+    "webpack": "4.46.0",
+    "@vue-storefront/magento-types": "^1.0.0"
   },
   "resolutions": {
     "vue": "2.6.14",

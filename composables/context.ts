@@ -1,5 +1,6 @@
 import type { AxiosInstance } from 'axios';
-import type { Config, MagentoApiMethods } from '@vue-storefront/magento-api';
+import type { Config } from '@vue-storefront/magento-api';
+import type { MagentoApiMethods } from '@vue-storefront/magento-types';
 import type { ApiClientMethods, IntegrationContext } from '~/types/core';
 
 export interface VsfContext {

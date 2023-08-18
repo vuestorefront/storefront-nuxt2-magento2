@@ -36,7 +36,7 @@ export function useUpsellProducts(): UseUpsellProductsInterface {
         .$vsf
         .$magento
         .api
-        .upsellProduct(searchParams, params?.customQuery ?? null, params?.customHeaders);
+        .upsellProducts(searchParams, params?.customQuery ?? null, params?.customHeaders);
 
       Logger.debug('[Result] Upsell products:', { data });
 

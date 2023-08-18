@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@vue-storefront/middleware": "2.7.5",
-    "@vue-storefront/magento-api": "1.1.0",
+    "@vue-storefront/magento-api": "2.1.1",
     "@nuxtjs/composition-api": "0.31.0",
     "cors": "2.8.5",
     "dotenv": "16.0.3"
