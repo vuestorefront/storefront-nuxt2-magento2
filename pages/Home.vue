@@ -71,6 +71,7 @@ import {
   useContext,
   onMounted,
   useFetch,
+  onServerPrefetch
 } from '@nuxtjs/composition-api';
 import LazyHydrate from 'vue-lazy-hydration';
 import { useCache, CacheTagPrefix } from '@vue-storefront/cache';
@@ -204,7 +205,7 @@ export default defineComponent({
       page.value = await loadPage({ identifier: 'home' });
     });
 
-    onMounted(() => {
+    onServerPrefetch(() => {
       addTags([{ prefix: CacheTagPrefix.View, value: 'home' }]);
     });
 
