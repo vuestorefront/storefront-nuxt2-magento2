@@ -3219,10 +3219,10 @@
     graphql-tag "^2.12.6"
     isomorphic-fetch "^3.0.0"
 
-"@vue-storefront/magento-types@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@vue-storefront/magento-types/-/magento-types-1.0.1.tgz#198082b1e0385851cb82fb6d1d39a4ac08d38463"
-  integrity sha512-kCa7VV1GHI+aEeXw7elcKuWwxothn0auhQAJJ3yUr3ZAfrrWzePRHxNbAzB3VU+5ejvRrOY+J5F53tdEOvKVlg==
+"@vue-storefront/magento-types@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@vue-storefront/magento-types/-/magento-types-1.0.2.tgz#2614f8b299ebf745e6eba41cc52d9bb0e6fdec14"
+  integrity sha512-V7iQuKRf6MRH3ynQHMtsrtbWBfy6yh+oRpAos7LljxgU3/LbbIFyibNHwxtoPFtRljM96MSR9FeZcSf3pJ5rDA==
 
 "@vue-storefront/middleware@2.7.5":
   version "2.7.5"
