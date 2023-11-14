@@ -8,7 +8,7 @@ export const getAvailablePaymentMethodsCommand = {
     customQuery?: CustomQuery,
     customHeaders?: CustomHeaders,
   ): Promise<AvailablePaymentMethod[]> => {
-    const { data } = await context.app.$vsf.$magento.api.getAvailablePaymentMethods({ cartId }, customQuery, customHeaders);
+    const { data } = await context.app.$vsf.$magento.api.getAvailablePaymentMethods(cartId, customQuery, customHeaders);
 
     return data?.cart?.available_payment_methods ?? [];
   },
