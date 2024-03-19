@@ -1,9 +1,9 @@
 <div align="center">
-<img src="https://user-images.githubusercontent.com/1626923/137092657-fb398d20-b592-4661-a1f9-4135db0b61d5.png" height="80px"/>
+<img src="https://res.cloudinary.com/vue-storefront/image/upload/v1710754524/Logo_green_2x_z4vmhz.png" height="80px"/>
 </div>
-# Vue Storefront 2 integration with Magento2
+# Alokai integration with Magento2
 
-Repository is a starter Vue Storefront 2 application integrated with Magento2.
+Repository is a starter Alokai application integrated with Magento2.
 
 ### Requirements:
 - NodeJS >=14 <=16
@@ -14,11 +14,11 @@ Repository is a starter Vue Storefront 2 application integrated with Magento2.
 
 To get started, see the following guides:
 
-- [Introduction](https://docs.vuestorefront.io/v2/getting-started/introduction.html) to learn what is Vue Storefront
+- [Introduction](https://docs.vuestorefront.io/v2/getting-started/introduction.html) to learn what is Alokai
 
 - [Configuring Magento2](https://docs.vuestorefront.io/magento/installation-setup/configure-magento.html) to setup your Magento2 store
 
-- [Configuring VueStorefront 2](https://docs.vuestorefront.io/magento/installation-setup/configure-integration.html) to install and setup new Vue Storefront project for Magento2
+- [Configuring Alokai](https://docs.vuestorefront.io/magento/installation-setup/configure-integration.html) to install and setup new Alokai project for Magento2
 
 ### Local dev setup
 ```bash
@@ -73,8 +73,8 @@ $ yarn dev
 
 ## Resources
 
-- [Vue Storefront Documentation](https://docs.vuestorefront.io/v2/)
-- [Vue Storefront Enterprise Documentation](https://docs.vuestorefront.io/v2/general/enterprise.html)
+- [Alokai Documentation](https://docs.vuestorefront.io/v2/)
+- [Alokai Enterprise Documentation](https://docs.vuestorefront.io/v2/general/enterprise.html)
 - [Magento2 Integration Documentation](https://docs.vuestorefront.io/magento/)
 - [API References](https://docs.vuestorefront.io/magento/api-reference/)
 - [Community Chat](http://discord.vuestorefront.io)
